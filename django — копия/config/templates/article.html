@@ -1,0 +1,26 @@
+{% extends 'about.html' %}
+
+{% block title %}
+Detail
+{% endblock title %}
+
+
+{% block content %}
+
+<div class="coll-xxl-8 m-auto">
+    <div class="card mb-5">
+        <div class="card-header">{{ i.title }}</div>
+            <div class="card-body">
+           
+                <h5 class="card-title">{{ i.after.username }}</h5>
+                    <p class="card-text">{{ i.text | slice:200 }}</p>
+                    <small>{{ i.ontime }}</small>
+                
+
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
+
+

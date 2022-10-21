@@ -1,0 +1,59 @@
+{% extends 'about.html' %}
+{% block title %}
+Home
+{% endblock title %}
+
+{% block content %}
+
+<a href="{% url 'create' %}"> + post qo`shish</a>
+<div class="row mt-5">
+    {% for i in object_list %}
+    
+    <div class="coll-xxl-8 m-auto">
+        <div class="card mb-5">
+            <div class="card-header">{{ i.title }}</div>
+                <div class="card-body">
+               
+                    <h5 class="card-title">{{ i.after.username }}</h5>
+                        <p class="card-text">{{ i.text | slice:200 }}</p>
+                        <small>{{ i.ontime }}</small>
+                    <a href="{% url 'detail' i.pk %}" class="btn btn-primary">to`liq ma`lumot</a>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+      <!-- <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div>
+        <div class="col">
+          <div class="card">
+            <img src="{{ i.img.url }}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{ i.tit }}</h5>
+              <p class="card-text">{{ i.body }}</p>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      
+
+
+
+
+
+    {% endfor %}
+</div>
+
+
+
+
+
+
+
+{% endblock content %}
+
+
